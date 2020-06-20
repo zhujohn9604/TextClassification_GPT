@@ -43,8 +43,8 @@ class LayerNorm(nn.Module):
         self.e = e
 
     def forward(self, x):  # x: [batch_size x n_ctx x n_state]
-        mu = x.mean(-1, keepdim=True)  # x: [batch_size x len x 1]
-        var = (x - mu).pow(2).mean(-1, keepdim=True)  # x: [batch_size x len x 1]
+        mu = x.mean(-1, keepdim=True)  # x: [batch_size x n_ctx x 1]
+        var = (x - mu).pow(2).mean(-1, keepdim=True)  # x: [batch_size x n_ctx x 1]
         x = (x - mu) / torch.sqrt(var + self.e)
         return self.g * x + self.b
 
