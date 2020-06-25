@@ -12,6 +12,6 @@ I added some comments along with the codes. If you find it's hard to digest the 
 
 The data can be download from USPTO for free. For sensitivity reasons, I only updated a demo dataset for reference.
 
-I used 20000+ patent abstracts (almost without preprocessing) in my implementation, and the test accuracy can achieve 68% or so within four epochs (fine tuning). Beyond 5 epochs, GPT would overfit the data (e.g., 100% training accuracy for 9 epochs).
+I used 20000+ patent abstracts (almost without preprocessing) in my implementation, and the validation accuracy can achieve 68% or so within four epochs (fine tuning). Beyond 5 epochs, GPT would overfit the data (e.g., 100% training accuracy for 9 epochs).
 
-Another finding is that after some preprocessing of the text data (e.g., lemmatization), the accuracy moved significantly to 74%.
+Another finding is that after some preprocessing of the text data (e.g., lemmatization), the validation accuracy moved significantly to 74%.
