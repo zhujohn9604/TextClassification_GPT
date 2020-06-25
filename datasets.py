@@ -20,9 +20,9 @@ def _patents(path):
         Inputabstract = []
         IpcCode = []
         for i, line in enumerate(list(f)):
-            if i > 0:  #header ['', 'abstract', 'title', 'IPC', 'ID', 'IPC_label']
-                Inputabstract.append(line[1])
-                IpcCode.append(line[3])
+            if i > 0:  #header ['abstract', 'title', 'IPC']
+                Inputabstract.append(line[0])
+                IpcCode.append(line[2])
         IpcCodeLabel = [ipc_dict[i] for i in IpcCode]
         return Inputabstract, IpcCodeLabel
 
