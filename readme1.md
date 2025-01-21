@@ -72,6 +72,34 @@
 | `绿灯可通行`       | `1`    |
 | `即将变红灯`       | `2`    |
 
+#### `main_action` 及 `guide_main_action` 映射规则
+`main_action` 及 `guide_main_action` 表示当前时刻和引导时刻的导航主信号，采用以下映射规则：
+
+| Action类型             | 映射值 | Remark                  |
+|---------------------|--------|-----------------------|
+| `NULL`             | `0`    | `无动作`              |
+| `TURN_LEFT`        | `1`    | `左转`                |
+| `TURN_RIGHT`       | `2`    | `右转`                |
+| `SLIGHT_LEFT`      | `3`    | `向左前方行驶`        |
+| `SLIGHT_RIGHT`     | `4`    | `向右前方行驶`        |
+| `TURN_HARDLEFT`    | `5`    | `向左后方行驶`        |
+| `TURN_HARDRIGHT`   | `6`    | `向右后方行驶`        |
+| `UTURN`            | `7`    | `左转调头`            |
+| `CONTINUE`         | `8`    | `直行`                |
+| `MERGE_LEFT`       | `9`    | `靠左`                |
+| `MERGE_RIGHT`      | `10`   | `靠右`                |
+| `ENTRY_RING`       | `11`   | `进入环岛`            |
+| `LEAVE_RING`       | `12`   | `离开环岛`            |
+| `SLOW`             | `13`   | `减速`                |
+| `PLUG_CONTINUE`    | `14`   | `插入直行`            |
+| `ENTER_BUILDING`   | `15`   | `进入建筑物`          |
+| `LEAVE_BUILDING`   | `16`   | `离开建筑物`          |
+| `BY_ELEVATOR`      | `17`   | `电梯换层`            |
+| `BY_STAIR`         | `18`   | `楼梯换层`            |
+| `BY_ESCALATOR`     | `19`   | `扶梯换层`            |
+| `COUNT`            | `20`   | `导航主动作最大个数`  |
+
+
 ### 注意事项
 - 请在数据预处理时确保输入数据与上述映射规则一致。
 - 如果值未定义或不可用，请使用 `-1` 表示。
