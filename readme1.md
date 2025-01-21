@@ -2,7 +2,7 @@
 
 本文档详细描述了 `planner_navi_input` 数据结构，这是一个包含 12 列的单行向量，数据类型为 `float32`。每一列表示一个特定的特征，具体说明如下。
 
-## `planner_navi_input`数据结构
+## `planner_navi_input` 数据结构
 
 ### 基本信息
 - **Shape**：`[bsz, 1, 12]`
@@ -35,9 +35,41 @@
 - `speedLimit` 表示当前道路的限速值。
 - **`-1`**：表示该特征的值未定义或不可用。
 
-## 注意事项
-- 数据预处理或模型训练时，请妥善处理特殊值（例如 `-1`）。
-- `guide_distance` 和 `traffic_light_distance` 是浮点数值，而其他分类特征为整数类型。
+### 数据映射规则
 
-## 联系方式
-如有任何问题或疑问，请联系数据集维护人员。
+#### `road_class` 映射规则
+`road_class` 表示道路分类，采用以下映射规则：
+
+| 道路类别           | 映射值 |
+|--------------------|--------|
+| R_NONE            | 0      |
+| HIGHWAY           | 1      |
+| NATIONALROAD      | 2      |
+| PROVINCIALROAD    | 3      |
+| COUNTRYROAD       | 4      |
+| TOWNROAD          | 5      |
+| NONNAVIGATIONROAD | 6      |
+| WALKINGROAD       | 7      |
+| FERRY             | 8      |
+| R_MAX             | 9      |
+
+#### `traffic_light_direction` 映射规则
+`traffic_light_direction` 表示交通信号灯的方向，采用以下映射规则：
+
+| 方向    | 映射值 |
+|---------|--------|
+| 左转    | 0      |
+| 右转    | 1      |
+| 调头    | 2      |
+| 直行    | 3      |
+
+#### `traffic_light_type` 映射规则
+`traffic_light_type` 表示交通信号灯的类型，采用以下映射规则：
+
+| 类型          | 映射值 |
+|---------------|--------|
+| 红灯倒计时    | 0      |
+| 绿灯可通行    | 1      |
+| 即将变红灯    | 2      |
+
+
