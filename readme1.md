@@ -18,12 +18,12 @@
 | `assist_action`          | `int`         | `[0, 91]`，表示当前副动作      |
 | `guide_main_action`      | `int`         | `[0, 20]`，表示引导主动作      |
 | `guide_assist_action`    | `int`         | `[0, 91]`，表示引导副动作      |
-| `guide_distance`         | `float`       | `[-1]` 表示引导距离，`-1` 表示未定义 |
+| `guide_distance`         | `float`       | `float or [-1]` 表示引导距离，`-1` 表示未定义 |
 | `traffic_light_direction`| `int`         | `[0, 3] + [-1]`，表示交通信号灯方向  |
 | `traffic_light_type`     | `int`         | `[0, 2] + [-1]`，表示交通信号灯类型  |
 | `traffic_light_countdown`| `int`         | `[0, 34] + [-1]`，表示信号灯倒计时   |
-| `traffic_light_distance` | `float`       | `[-1]` 表示交通信号灯的距离          |
-| `speedLimit`             | `float`       | `[-1]` 表示当前道路的限速值          |
+| `traffic_light_distance` | `float`       | `float or [-1]` 表示交通信号灯的距离          |
+| `speedLimit`             | `float`       | `float or [-1]` 表示当前道路的限速值          |
 
 
 ### 字段及特殊值说明
@@ -56,7 +56,7 @@
 #### 2. `main_action` 及 `guide_main_action` 映射规则
 `main_action` 及 `guide_main_action` 表示当前时刻和引导时刻的导航主信号，采用以下映射规则：
 
-| Action类型             | 映射值 | Remark                  |
+| 信号类型             | 映射值 | 描述                 |
 |---------------------|--------|-----------------------|
 | `NULL`             | `0`    | `无动作`              |
 | `TURN_LEFT`        | `1`    | `左转`                |
@@ -84,7 +84,7 @@
 #### 3. `assist_action` 及 `guide_assist_action` 映射规则
 `assist_action` 及 `guide_assist_action` 表示当前时刻和引导时刻的导航副信号，采用以下映射规则：
 
-| 动作名称                 | 映射值 | 备注                         |
+| 信号类型                 | 映射值 | 描述                         |
 |--------------------------|--------|------------------------------|
 | `NULL`                   | `0`    | `无动作`                     |
 | `ENTRY_MAIN`             | `1`    | `进入主路`                   |
