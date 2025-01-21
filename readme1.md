@@ -199,6 +199,28 @@
 | `即将变红灯`       | `2`    |
 
 
+## `highlight_lane` 数据结构
+
+### 基本信息
+`highlight_lane` 数据由 `highlight_lane_attrs` 和 `highlight_lane_distance` 组成：
+- **Shape**：
+  - `highlight_lane_attrs`: `[bsz, 10, 6]`
+  - `highlight_lane_distance`: `[bsz, 1]`
+- **输入时数据类型**：`float32`
+
+
+### 字段概览
+
+| 字段                     | 原始数据类型      | 范围 / 描述                          |
+|--------------------------|---------------|---------------------------------------|
+| `highlight_lane_attrs：：recommend`             | `int`         | `[0, 9] + [-1]`，表示道路分类         |
+| `highlight_lane_attrs：：can_drive`              | `int`         | `[0, 30] + [-1]`，表示道路类型        |
+| `highlight_lane_attrs：：lane_type`            | `int`         | `[0, 20]`，表示当前主动作      |
+| `highlight_lane_attrs：：lane_direction`          | `int`         | `[0, 91]`，表示当前副动作      |
+| `highlight_lane_attrs：：lane_highlight_direction`      | `int`         | `[0, 20]`，表示引导主动作      |
+| `highlight_lane_attrs：：lane_change_type`    | `int`         | `[0, 91]`，表示引导副动作      |
+| `highlight_lane_distance`         | `float`       | `[-1]` 表示引导距离，`-1` 表示未定义 |
+
 
 
 
