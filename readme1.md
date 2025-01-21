@@ -1,43 +1,43 @@
-# Planner Navigation Input Data Description
+# 导航规划输入数据描述
 
-This document provides a detailed description of the `planner_navi_input` data structure, which is a single-row, 12-column vector of type `float32`. Each column represents a specific feature, as described below.
+本文档详细描述了 `planner_navi_input` 数据结构，这是一个包含 12 列的单行向量，数据类型为 `float32`。每一列表示一个特定的特征，具体说明如下。
 
-## Data Structure
+## `planner_navi_input`数据结构
 
-### General Information
-- **Shape**: `[1, 12]`
-- **Data Type**: `float32`
+### 基本信息
+- **Shape**：`[bsz, 1, 12]`
+- **输入时数据类型**：`float32`
 
-### Columns and Their Descriptions
+### 字段概览
 
-| Column Name              | Data Type      | Range / Description                  |
-|--------------------------|----------------|---------------------------------------|
-| `road_class`             | `int`          | `[0, 30] + [-1]`                     |
-| `road_type`              | `int`          | `[0, 30] + [-1]`                     |
-| `main_action`            | `int`          | `[0, 30] + [-1]`                     |
-| `assist_action`          | `int`          | `[0, 50] + [-1]`                     |
-| `guide_main_action`      | `int`          | `[0, 30] + [-1]`                     |
-| `guide_assist_action`    | `int`          | `[0, 110] + [-1]`                    |
-| `guide_distance`         | `float`        | `[-1]` for undefined distances       |
-| `traffic_light_direction`| `int`          | `[0, 10] + [-1]`                     |
-| `traffic_light_type`     | `int`          | `[0, 10] + [-1]`                     |
-| `traffic_light_countdown`| `int`          | `[0, 35] + [-1]`                     |
-| `traffic_light_distance` | `float`        | `[-1]` for undefined distances       |
-| `speedLimit`             | `float`        | `[-1]` for undefined limits          |
+| 字段                     | 原始数据类型      | 范围 / 描述                          |
+|--------------------------|---------------|---------------------------------------|
+| `road_class`             | `int`         | `[0, 9] + [-1]`，表示道路分类         |
+| `road_type`              | `int`         | `[0, 30] + [-1]`，表示道路类型        |
+| `main_action`            | `int`         | `[0, 20]`，表示当前主动作      |
+| `assist_action`          | `int`         | `[0, 91]`，表示当前副动作      |
+| `guide_main_action`      | `int`         | `[0, 20]`，表示引导主动作      |
+| `guide_assist_action`    | `int`         | `[0, 91]`，表示引导副动作      |
+| `guide_distance`         | `float`       | `[-1]` 表示引导距离，`-1` 表示未定义 |
+| `traffic_light_direction`| `int`         | `[0, 3] + [-1]`，表示交通信号灯方向  |
+| `traffic_light_type`     | `int`         | `[0, 2] + [-1]`，表示交通信号灯类型  |
+| `traffic_light_countdown`| `int`         | `[0, 34] + [-1]`，表示信号灯倒计时   |
+| `traffic_light_distance` | `float`       | `[-1]` 表示交通信号灯的距离          |
+| `speedLimit`             | `float`       | `[-1]` 表示当前道路的限速值          |
 
-### Explanation of Special Values
-- **`-1`**: Indicates an undefined or unavailable value for the respective feature.
 
-## Example Use Case
-This dataset can be used for navigation planning in autonomous vehicles, where:
-- `road_class`, `road_type`, and `main_action` represent the type of road and the primary action to be taken.
-- `assist_action` and `guide_*` columns provide additional guidance for the navigation system.
-- `traffic_light_*` features provide information about nearby traffic lights, including their direction, type, countdown timer, and distance.
-- `speedLimit` indicates the current speed limit on the road.
+### 字段及特殊值说明
+该数据可用于自动驾驶车辆的导航规划，其中：
+- `road_class` 和 `road_type` 表示道路类型。
+- `main_action` 和 `assist_action` 表示当前时刻的主、副action。
+- `guide_main_action`、`guide_assist_action` 和 `guide_distance` 表示引导信号和引导距离。
+- `traffic_light_*` 特征提供关于附近交通信号灯的信息，包括方向、类型、倒计时和距离。
+- `speedLimit` 表示当前道路的限速值。
+- **`-1`**：表示该特征的值未定义或不可用。
 
-## Notes
-- Ensure that special values (e.g., `-1`) are handled appropriately during data preprocessing or model training.
-- Features such as `guide_distance` and `traffic_light_distance` are provided as floating-point values, while other categorical features are represented as integers.
+## 注意事项
+- 数据预处理或模型训练时，请妥善处理特殊值（例如 `-1`）。
+- `guide_distance` 和 `traffic_light_distance` 是浮点数值，而其他分类特征为整数类型。
 
-## Contact
-For any questions or clarifications, feel free to reach out to the dataset maintainer.
+## 联系方式
+如有任何问题或疑问，请联系数据集维护人员。
