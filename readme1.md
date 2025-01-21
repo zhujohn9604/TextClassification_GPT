@@ -42,34 +42,36 @@
 
 | 道路类别           | 映射值 |
 |--------------------|--------|
-| `R_NONE`            | 0      |
-| HIGHWAY           | 1      |
-| NATIONALROAD      | 2      |
-| PROVINCIALROAD    | 3      |
-| COUNTRYROAD       | 4      |
-| TOWNROAD          | 5      |
-| NONNAVIGATIONROAD | 6      |
-| WALKINGROAD       | 7      |
-| FERRY             | 8      |
-| R_MAX             | 9      |
+| `R_NONE`          | `0`    |
+| `HIGHWAY`         | `1`    |
+| `NATIONALROAD`    | `2`    |
+| `PROVINCIALROAD`  | `3`    |
+| `COUNTRYROAD`     | `4`    |
+| `TOWNROAD`        | `5`    |
+| `NONNAVIGATIONROAD` | `6`  |
+| `WALKINGROAD`     | `7`    |
+| `FERRY`           | `8`    |
+| `R_MAX`           | `9`    |
 
 #### `traffic_light_direction` 映射规则
 `traffic_light_direction` 表示交通信号灯的方向，采用以下映射规则：
 
 | 方向    | 映射值 |
 |---------|--------|
-| 左转    | 0      |
-| 右转    | 1      |
-| 调头    | 2      |
-| 直行    | 3      |
+| `左转`   | `0`    |
+| `右转`   | `1`    |
+| `调头`   | `2`    |
+| `直行`   | `3`    |
 
 #### `traffic_light_type` 映射规则
 `traffic_light_type` 表示交通信号灯的类型，采用以下映射规则：
 
-| 类型          | 映射值 |
-|---------------|--------|
-| 红灯倒计时    | 0      |
-| 绿灯可通行    | 1      |
-| 即将变红灯    | 2      |
+| 类型              | 映射值 |
+|-------------------|--------|
+| `红灯倒计时`       | `0`    |
+| `绿灯可通行`       | `1`    |
+| `即将变红灯`       | `2`    |
 
-
+### 注意事项
+- 请在数据预处理时确保输入数据与上述映射规则一致。
+- 如果值未定义或不可用，请使用 `-1` 表示。
