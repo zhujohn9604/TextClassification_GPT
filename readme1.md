@@ -37,7 +37,7 @@
 
 ### 数据映射规则
 
-#### `road_class` 映射规则
+#### 1. `road_class` 映射规则
 `road_class` 表示道路分类，采用以下映射规则：
 
 | 道路类别           | 映射值 |
@@ -53,26 +53,7 @@
 | `FERRY`           | `8`    |
 | `R_MAX`           | `9`    |
 
-#### `traffic_light_direction` 映射规则
-`traffic_light_direction` 表示交通信号灯的方向，采用以下映射规则：
-
-| 方向    | 映射值 |
-|---------|--------|
-| `左转`   | `0`    |
-| `右转`   | `1`    |
-| `调头`   | `2`    |
-| `直行`   | `3`    |
-
-#### `traffic_light_type` 映射规则
-`traffic_light_type` 表示交通信号灯的类型，采用以下映射规则：
-
-| 类型              | 映射值 |
-|-------------------|--------|
-| `红灯倒计时`       | `0`    |
-| `绿灯可通行`       | `1`    |
-| `即将变红灯`       | `2`    |
-
-#### `main_action` 及 `guide_main_action` 映射规则
+#### 2. `main_action` 及 `guide_main_action` 映射规则
 `main_action` 及 `guide_main_action` 表示当前时刻和引导时刻的导航主信号，采用以下映射规则：
 
 | Action类型             | 映射值 | Remark                  |
@@ -98,6 +79,127 @@
 | `BY_STAIR`         | `18`   | `楼梯换层`            |
 | `BY_ESCALATOR`     | `19`   | `扶梯换层`            |
 | `COUNT`            | `20`   | `导航主动作最大个数`  |
+
+
+#### 3. `assist_action` 及 `guide_assist_action` 映射规则
+`assist_action` 及 `guide_assist_action` 表示当前时刻和引导时刻的导航副信号，采用以下映射规则：
+
+| 动作名称                 | 映射值 | 备注                         |
+|--------------------------|--------|------------------------------|
+| `NULL`                   | `0`    | `无动作`                     |
+| `ENTRY_MAIN`             | `1`    | `进入主路`                   |
+| `ENTRY_SIDEROAD`         | `2`    | `进入辅路`                   |
+| `ENTRY_FREEWAY`          | `3`    | `进入高速`                   |
+| `ENTRY_SLIP`             | `4`    | `进入匝道`                   |
+| `ENTRY_TUNNEL`           | `5`    | `进入隧道`                   |
+| `ENTRY_CENTERBRANCH`     | `6`    | `进入中间岔道`               |
+| `ENTRY_RIGHTBRANCH`      | `7`    | `进入右岔路`                 |
+| `ENTRY_LEFTBRANCH`       | `8`    | `进入左岔路`                 |
+| `ENTRY_RIGHTROAD`        | `9`    | `进入右转专用道`             |
+| `ENTRY_LEFTROAD`         | `10`   | `进入左转专用道`             |
+| `ENTRY_MERGE_CENTER`     | `11`   | `进入中间道路`               |
+| `ENTRY_MERGE_RIGHT`      | `12`   | `进入右侧道路`               |
+| `ENTRY_MERGE_LEFT`       | `13`   | `进入左侧道路`               |
+| `ENTRY_MERGE_RIGHTSILD`  | `14`   | `靠右进入辅路`               |
+| `ENTRY_MERGE_LEFTSILD`   | `15`   | `靠左进入辅路`               |
+| `ENTRY_MERGE_RIGHTMAIN`  | `16`   | `靠右进入主路`               |
+| `ENTRY_MERGE_LEFTMAIN`   | `17`   | `靠左进入主路`               |
+| `ENTRY_MERGE_RIGHTRIGHT` | `18`   | `靠右进入右转专用道`         |
+| `ENTRY_FERRY`            | `19`   | `到达航道`                   |
+| `LEFT_FERRY`             | `20`   | `驶离轮渡`                   |
+| `ALONG_ROAD`             | `21`   | `沿当前道路行驶`             |
+| `ALONG_SILD`             | `22`   | `沿辅路行驶`                 |
+| `ALONG_MAIN`             | `23`   | `沿主路行驶`                 |
+| `ARRIVE_EXIT`            | `24`   | `到达出口`                   |
+| `ARRIVE_SERVICEAREA`     | `25`   | `到达服务区`                 |
+| `ARRIVE_TOLLGATE`        | `26`   | `到达收费站`                 |
+| `ARRIVE_WAY`             | `27`   | `到达途径地`                 |
+| `ARRIVE_DESTINATION`     | `28`   | `到达目的地`                 |
+| `ARRIVE_CHARGINGSTATION` | `29`   | `到达充电站`                 |
+| `ENTRY_RINGLEFT`         | `30`   | `沿环岛左转`                 |
+| `ENTRY_RINGRIGHT`        | `31`   | `绕环岛右转`                 |
+| `ENTRY_RINGCONTINUE`     | `32`   | `绕环岛直行`                 |
+| `ENTRY_RINGUTURN`        | `33`   | `绕环岛掉头`                 |
+| `SMALLRING_NOTCOUNT`     | `34`   | `小环岛不数个数`             |
+| `RIGHT_BRANCH1`          | `35`   | `复杂路口，走右边第一出口`   |
+| `RIGHT_BRANCH2`          | `36`   | `复杂路口，走右边第二出口`   |
+| `RIGHT_BRANCH3`          | `37`   | `复杂路口，走右边第三出口`   |
+| `RIGHT_BRANCH4`          | `38`   | `复杂路口，走右边第四出口`   |
+| `RIGHT_BRANCH5`          | `39`   | `复杂路口，走右边第五出口`   |
+| `LEFT_BRANCH1`           | `40`   | `复杂路口，走左边第一出口`   |
+| `LEFT_BRANCH2`           | `41`   | `复杂路口，走左边第二出口`   |
+| `LEFT_BRANCH3`           | `42`   | `复杂路口，走左边第三出口`   |
+| `LEFT_BRANCH4`           | `43`   | `复杂路口，走左边第四出口`   |
+| `LEFT_BRANCH5`           | `44`   | `复杂路口，走左边第五出口`   |
+| `ENTER_ULINE`            | `45`   | `进入调头专用路`             |
+| `PASS_CROSSWALK`         | `46`   | `通过人行横道`               |
+| `PASS_OVERPASS`          | `47`   | `通过过街天桥`               |
+| `PASS_UNDERGROUND`       | `48`   | `通过地下通道`               |
+| `PASS_SQUARE`            | `49`   | `通过广场`                   |
+| `PASS_PARK`              | `50`   | `通过公园`                   |
+| `PASS_STAIRCASE`         | `51`   | `通过扶梯`                   |
+| `PASS_LIFT`              | `52`   | `通过直梯`                   |
+| `PASS_CABLEWAY`          | `53`   | `通过索道`                   |
+| `PASS_SKYCHANNEL`        | `54`   | `通过空中通道`               |
+| `PASS_CHANNEL`           | `55`   | `通过建筑物穿越通道`         |
+| `PASS_WALKROAD`          | `56`   | `通过行人道路`               |
+| `PASS_BOATLINE`          | `57`   | `通过游船路线`               |
+| `PASS_SIGHTSEEING_LINE`  | `58`   | `通过观光路线`               |
+| `PASS_SKIDWAY`           | `59`   | `通过滑道`                   |
+| `PASS_LADDER`            | `60`   | `通过梯子`                   |
+| `PASS_SLOP`              | `61`   | `通过斜坡`                   |
+| `PASS_BRIDGE`            | `62`   | `通过桥梁`                   |
+| `PASS_FERRY`             | `63`   | `通过渡轮`                   |
+| `PASS_SUBWAY`            | `64`   | `通过地铁`                   |
+| `SOON_ENTER_BUILDING`    | `65`   | `即将进入建筑物`             |
+| `SOON_LEAVE_BUILDING`    | `66`   | `即将离开建筑物`             |
+| `ENTER_ROUNDABOUT`       | `67`   | `进入环岛`                   |
+| `LEAVE_ROUNDABOUT`       | `68`   | `离开环岛`                   |
+| `ENTER_PATH`             | `69`   | `进入小路`                   |
+| `ENTER_INNER`            | `70`   | `进入内部路`                 |
+| `ENTER_LEFT_BRANCH_TWO`  | `71`   | `进入左边第二岔路`           |
+| `ENTER_LEFT_BRANCH_THREE`| `72`   | `进入左边第三岔路`           |
+| `ENTER_RIGHT_BRANCH_TWO` | `73`   | `进入右边第二岔路`           |
+| `ENTER_RIGHT_BRANCH_THREE`| `74`  | `进入右边第三岔路`           |
+| `ENTER_GAS_STATION`      | `75`   | `进入加油站道路`             |
+| `ENTER_HOUSING_ESTATE`   | `76`   | `进入小区道路`               |
+| `ENTER_PARK_ROAD`        | `77`   | `进入园区道路`               |
+| `ENTER_OVERHEAD`         | `78`   | `上高架`                     |
+| `ENTER_CENTER_BRANCH_OVERHEAD` | `79` | `走中间岔路上高架`       |
+| `ENTER_RIGHT_BRANCH_OVERHEAD` | `80`  | `走最右侧岔路上高架`     |
+| `ENTER_LEFT_BRANCH_OVERHEAD`  | `81` | `走最左侧岔路上高架`     |
+| `ALONE_STRAIGHT`         | `82`   | `沿当前道路直行`             |
+| `DOWN_OVERHEAD`          | `83`   | `下高架`                     |
+| `ENTER_LEFT_OVERHEAD`    | `84`   | `进入左侧高架`               |
+| `ENTER_RIGHT_OVERHEAD`   | `85`   | `进入右侧高架`               |
+| `UPTO_BRIDGE`            | `86`   | `进入桥梁`                   |
+| `ENTER_PARKING`          | `87`   | `进入停车场`                 |
+| `ENTER_OVERPASS`         | `88`   | `进入立交桥`                 |
+| `ENTER_BRIDGE`           | `89`   | `进入桥梁`                   |
+| `ENTER_UNDERPASS`        | `90`   | `进入地下通道`               |
+| `MAX`                    | `91`   | `最大辅助动作`               |
+
+#### 4. `traffic_light_direction` 映射规则
+`traffic_light_direction` 表示交通信号灯的方向，采用以下映射规则：
+
+| 方向    | 映射值 |
+|---------|--------|
+| `左转`   | `0`    |
+| `右转`   | `1`    |
+| `调头`   | `2`    |
+| `直行`   | `3`    |
+
+#### 5. `traffic_light_type` 映射规则
+`traffic_light_type` 表示交通信号灯的类型，采用以下映射规则：
+
+| 类型              | 映射值 |
+|-------------------|--------|
+| `红灯倒计时`       | `0`    |
+| `绿灯可通行`       | `1`    |
+| `即将变红灯`       | `2`    |
+
+
+
 
 
 ### 注意事项
