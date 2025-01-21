@@ -211,15 +211,16 @@
 
 ### 字段概览
 
-| 字段                     | 原始数据类型      | 范围 / 描述                          |
-|--------------------------|---------------|---------------------------------------|
-| `highlight_lane_attrs：：recommend`             | `int`         | `[0, 9] + [-1]`，表示道路分类         |
-| `highlight_lane_attrs：：can_drive`              | `int`         | `[0, 30] + [-1]`，表示道路类型        |
-| `highlight_lane_attrs：：lane_type`            | `int`         | `[0, 20]`，表示当前主动作      |
-| `highlight_lane_attrs：：lane_direction`          | `int`         | `[0, 91]`，表示当前副动作      |
-| `highlight_lane_attrs：：lane_highlight_direction`      | `int`         | `[0, 20]`，表示引导主动作      |
-| `highlight_lane_attrs：：lane_change_type`    | `int`         | `[0, 91]`，表示引导副动作      |
-| `highlight_lane_distance`         | `float`       | `[-1]` 表示引导距离，`-1` 表示未定义 |
+| 字段                                     | 原始数据类型  | 范围 / 描述                                |
+|------------------------------------------|---------------|-------------------------------------------|
+| `highlight_lane_attrs::recommend`        | `int`         | `[0, 1]`，表示是否推荐该车道                 |
+| `highlight_lane_attrs::can_drive`        | `int`         | `[0, 1]`，表示是否允许车辆行驶               |
+| `highlight_lane_attrs::lane_type`        | `int`         | `[0, 11] + [-1]`，表示车道类型              |
+| `highlight_lane_attrs::lane_direction`  | `int`         | `[0, 5] + [-1]`，表示车道行驶方向            |
+| `highlight_lane_attrs::lane_highlight_direction` | `int`         | `[0, 5] + [-1]`，表示高亮车道行驶方向           |
+| `highlight_lane_attrs::lane_change_type` | `int`         | `[0, 91]`，表示车道变换类型                 |
+| `highlight_lane_distance`               | `float`       | `[-1]`，表示与高亮车道的距离，`-1` 表示未定义   |
+
 
 
 
