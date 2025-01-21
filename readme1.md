@@ -42,7 +42,7 @@
 
 | 道路类别           | 映射值 |
 |--------------------|--------|
-| R_NONE            | 0      |
+| `R_NONE`            | 0      |
 | HIGHWAY           | 1      |
 | NATIONALROAD      | 2      |
 | PROVINCIALROAD    | 3      |
