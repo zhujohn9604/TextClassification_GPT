@@ -308,3 +308,7 @@
 | `0100`      | `2`    | `左侧收窄` |
 | `0010`      | `3`    | `右侧收窄` |
 | `0001`      | `4`    | `右侧拓展` |
+
+
+### 参考映射表
+https://ad-gitlab.nioint.com/ad/data-algorithm/pad/wm-prompt-export/-/blob/master/mapping_config.py?ref_type=heads
