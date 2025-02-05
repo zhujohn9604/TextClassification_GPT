@@ -84,6 +84,22 @@
 | `BY_ESCALATOR`     | `19`   | `扶梯换层`            |
 | `COUNT`            | `20`   | `导航主动作最大个数`  |
 
+`fake_main_action` 映射规则：
+| 信号类型                                      | 映射值 | 描述             |
+|-----------------------------------------------|--------|------------------|
+| `crossing_junction_straight`                  | `8`    | 直行             |
+| `crossing_junction_turn_right_front_diagonal` | `4`    | 向右前方行驶 0x4  |
+| `crossing_junction_turn_right_back_diagonal`  | `6`    | 向右后方行驶 0x6  |
+| `crossing_junction_after_straight`            | `8`    | 直行             |
+| `crossing_junction_turn_left_front_diagonal`  | `3`    | 向左前方行驶 0x3  |
+| `crossing_junction_turn_left_back_diagonal`   | `5`    | 向左后方行驶 0x5  |
+| `crossing_junction_before_straight`           | `8`    | 直行             |
+| `crossing_junction_turn_left_turn`            | `1`    | 左转 0x1          |
+| `no_reached_junction`                         | `0`    | 未到达路口        |
+| `crossing_junction_turn_u_turn`               | `7`    | 左转调头 0x7      |
+| `crossing_junction_turn_right_turn`           | `2`    | 右转 0x1          |
+
+
 
 #### 3. `assist_action` 及 `guide_assist_action` 映射规则
 `assist_action` 及 `guide_assist_action` 表示当前时刻和引导时刻的导航副信号，采用以下映射规则：
