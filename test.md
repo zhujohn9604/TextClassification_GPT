@@ -1,6 +1,6 @@
 # 导航规划输入数据描述
 
-本文档描述了 `planner_navi_input` 以及 `highlight_lane` 数据结构，具体说明如下。\\
+本文档描述了 `planner_navi_input` 以及 `highlight_lane` 数据结构，具体说明如下。  
 映射关系: https://ad-gitlab.nioint.com/ad/data-algorithm/pad/wm-prompt-export/-/blob/master/mapping_config.py?ref_type=heads
 
 ## `planner_navi_input` 数据结构
